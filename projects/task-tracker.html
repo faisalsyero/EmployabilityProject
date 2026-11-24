@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Tracker</title>
+    <style>
+      :root { font-family: Inter, "Segoe UI", sans-serif; color: #172033; background: #f4f7fa; }
+      * { box-sizing: border-box; }
+      body { margin: 0; padding: 32px; }
+      main { max-width: 760px; margin: auto; }
+      h1 { margin: 0 0 6px; }
+      .intro { margin: 0 0 24px; color: #687083; }
+      .composer { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+      input, button, select { min-height: 44px; border: 1px solid #dde3ea; border-radius: 8px; padding: 10px 12px; font: inherit; }
+      button { border: 0; background: #1f3f66; color: white; font-weight: 700; cursor: pointer; }
+      .filters { display: flex; gap: 8px; margin: 16px 0; }
+      .filters button { background: #e8eef4; color: #315f91; }
+      .filters button.active { background: #315f91; color: white; }
+      ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+      li { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; border: 1px solid #dde3ea; border-radius: 10px; padding: 12px; background: white; }
+      li.done span { color: #687083; text-decoration: line-through; }
+      li button { background: transparent; color: #687083; min-height: 36px; }
+      .empty { display: block; border: 0; text-align: center; color: #687083; background: transparent; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Task Tracker</h1>
+      <p class="intro">A browser-based JavaScript project demonstration.</p>
+      <form class="composer" id="task-form">
+        <input id="task-input" aria-label="New task" placeholder="Enter a task" required />
+        <button type="submit">Add task</button>
+      </form>
+      <div class="filters" aria-label="Filter tasks">
+        <button class="active" type="button" data-filter="all">All</button>
+        <button type="button" data-filter="active">Active</button>
+        <button type="button" data-filter="done">Done</button>
+      </div>
+      <ul id="task-list" aria-live="polite"></ul>
+    </main>
+    <script>
+      const form = document.querySelector("#task-form");
+      const input = document.querySelector("#task-input");
+      const list = document.querySelector("#task-list");
+      const filterButtons = document.querySelectorAll("[data-filter]");
+      let filter = "all";
+      let tasks = [
+        { id: 1, text: "Review the project requirements", done: true },
+        { id: 2, text: "Build and test the interface", done: false }
+      ];
+
+      function render() {
+        const visible = tasks.filter((task) =>
+          filter === "all" || (filter === "done" ? task.done : !task.done)
+        );
+        list.innerHTML = "";
+        if (!visible.length) {
+          list.innerHTML = '<li class="empty">No tasks to show.</li>';
+          return;
+        }
+        visible.forEach((task) => {
+          const item = document.createElement("li");
+          item.className = task.done ? "done" : "";
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = task.done;
+          checkbox.setAttribute("aria-label", `Complete ${task.text}`);
+          const label = document.createElement("span");
+          label.textContent = task.text;
+          const deleteButton = document.createElement("button");
+          deleteButton.type = "button";
+          deleteButton.textContent = "Delete";
+          deleteButton.setAttribute("aria-label", `Delete ${task.text}`);
+          item.append(checkbox, label, deleteButton);
+          checkbox.addEventListener("change", (event) => {
+            task.done = event.target.checked;
+            render();
+          });
+          deleteButton.addEventListener("click", () => {
+            tasks = tasks.filter((candidate) => candidate.id !== task.id);
+            render();
+          });
+          list.append(item);
+        });
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const text = input.value.trim();
+        if (!text) {
+          input.setCustomValidity("Enter a task name, not just spaces.");
+          input.reportValidity();
+          return;
+        }
+        input.setCustomValidity("");
+        tasks.push({ id: Date.now(), text, done: false });
+        input.value = "";
+        render();
+      });
+
+      input.addEventListener("input", () => {
+        input.setCustomValidity("");
+      });
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          filter = button.dataset.filter;
+          filterButtons.forEach((candidate) => candidate.classList.remove("active"));
+          button.classList.add("active");
+          render();
+        });
+      });
+
+      render();
+    </script>
+  </body>
+</html>
