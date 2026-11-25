@@ -91,13 +91,3 @@ document.querySelector(".notice-ok").addEventListener("click", closeNotice);
 noticeDialog.addEventListener("close", () => {
   document.body.classList.remove("dialog-open");
 });
-
-document.querySelectorAll("[data-placeholder]").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    showNotice(
-      `${link.dataset.placeholder} profile needed`,
-      `Replace the "#" link in index.html with your ${link.dataset.placeholder} profile URL.`
-    );
-  });
-});

@@ -35,4 +35,4 @@ Replace that file to update the CV shown on the portfolio.
 
 ## Add professional profiles
 
-Replace the `#` values and placeholder notices for LinkedIn and GitHub in `index.html` with your real profile URLs.
+LinkedIn and GitHub profile links are configured in `index.html`.
