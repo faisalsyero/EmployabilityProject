@@ -12,6 +12,13 @@ python -m http.server 8000
 
 Then open `http://localhost:8000`.
 
+## Publish with GitHub Pages
+
+This repository deploys the site from the root directory of `main` using GitHub Actions.
+For a free GitHub account, make the repository public, then open **Settings → Pages**
+and set the build and deployment source to **GitHub Actions**. Push to `main` to start
+the first deployment; later pushes deploy automatically.
+
 ## Add your work
 
 - Add project pages to `projects/` and update the matching `data-project` value in `index.html`.
