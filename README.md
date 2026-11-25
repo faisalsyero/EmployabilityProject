@@ -22,20 +22,16 @@ the first deployment; later pushes deploy automatically.
 ## Add your work
 
 - Add project pages to `projects/` and update the matching `data-project` value in `index.html`.
-- The Task Tracker demonstration is already available at `projects/task-tracker.html`.
+- Daymark Task Manager links to the [task-manager repository](https://github.com/faisalsyero/task-manager).
 - Project Two links directly to the Messaging App GitHub repository. The launch button opens `https://github.com/jamesfinnon/messaging-app.git` in a new tab.
 - Project Three links directly to the Blackjack AI GitHub repository. The launch button opens `https://github.com/struanmckenzie/blackjack-ai.git` in a new tab.
+- The Pokemon AI Team Optimiser links to the [pokemon-bestteam repository](https://github.com/faisalsyero/pokemon-bestteam) and is marked in progress.
 - Replace project text, technology tags, role descriptions, and challenge descriptions in `index.html`.
 
 ## Add your CV
 
-Place the PDF here:
-
-```text
-assets/Faisal-Suleiman-Yero-CV.pdf
-```
-
-The CV download and view buttons will then work automatically.
+The CV download and view buttons use `Employability CV.pdf` in the repository root.
+Replace that file to update the CV shown on the portfolio.
 
 ## Add professional profiles
 

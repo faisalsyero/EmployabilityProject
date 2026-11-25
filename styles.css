@@ -309,7 +309,7 @@ body.dialog-open {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -365,6 +365,20 @@ body.dialog-open {
   margin: 0 0 16px;
   color: var(--muted);
   font-size: 14px;
+}
+
+.project-card > .project-status {
+  width: fit-content;
+  min-height: 0;
+  margin: -12px 0 12px;
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: #e8f5ed;
+  color: #26734d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .tag-list {
@@ -712,14 +726,6 @@ body.dialog-open {
 
   .profile-card {
     max-width: 420px;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .project-card:last-child {
-    grid-column: 1 / -1;
   }
 
   .cv-card {
