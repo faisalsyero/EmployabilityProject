@@ -26,6 +26,7 @@ the first deployment; later pushes deploy automatically.
 - Project Two links directly to the Messaging App GitHub repository. The launch button opens `https://github.com/jamesfinnon/messaging-app.git` in a new tab.
 - Project Three links directly to the Blackjack AI GitHub repository. The launch button opens `https://github.com/struanmckenzie/blackjack-ai.git` in a new tab.
 - The Pokemon AI Team Optimiser links to the [pokemon-bestteam repository](https://github.com/faisalsyero/pokemon-bestteam) and is marked in progress.
+- Nova is a solo Java game project linked to the [nova-game repository](https://github.com/faisalsyero/nova-game).
 - Replace project text, technology tags, role descriptions, and challenge descriptions in `index.html`.
 
 ## Add your CV
