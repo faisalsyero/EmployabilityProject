@@ -469,40 +469,40 @@ body.dialog-open {
   font-size: 12px;
 }
 
-.code-example {
-  overflow: hidden;
-  border-radius: 12px;
-  background: #182438;
+.project-evidence {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
 }
 
-.code-bar {
-  display: flex;
-  gap: 6px;
-  padding: 12px 14px 8px;
+.project-evidence h4 {
+  margin: 0 0 6px;
+  font-size: 15px;
 }
 
-.code-bar span {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #70809a;
-}
-
-.code-example pre {
-  margin: 0;
-  padding: 10px 18px 20px;
-  overflow-x: auto;
-  color: #dae6f5;
+.project-evidence p {
+  margin: 0 0 10px;
+  color: var(--muted);
   font-size: 12px;
-  line-height: 1.8;
 }
 
-.code-keyword {
-  color: #8ebbf0;
+.project-evidence ul {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.code-name {
-  color: #dfb87b;
+.project-evidence a {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.project-evidence a:hover,
+.project-evidence a:focus-visible {
+  text-decoration: underline;
 }
 
 .transferable-list {

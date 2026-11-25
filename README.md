@@ -23,8 +23,8 @@ the first deployment; later pushes deploy automatically.
 
 - Add project pages to `projects/` and update the matching `data-project` value in `index.html`.
 - Daymark Task Manager links to the [task-manager repository](https://github.com/faisalsyero/task-manager).
-- Project Two links directly to the Messaging App GitHub repository. The launch button opens `https://github.com/jamesfinnon/messaging-app.git` in a new tab.
-- Project Three links directly to the Blackjack AI GitHub repository. The launch button opens `https://github.com/struanmckenzie/blackjack-ai.git` in a new tab.
+- Project Two links to the [Messaging App repository](https://github.com/jamesfinnon/messaging-app); Faisal implemented the entire GUI.
+- Project Three is a group project combining a House Price Predictor and Maze Solver, linked to the [project repository](https://github.com/struanmckenzie/blackjack-ai). The team implemented and compared classical AI search and machine-learning regression algorithms.
 - The Pokemon AI Team Optimiser links to the [pokemon-bestteam repository](https://github.com/faisalsyero/pokemon-bestteam) and is marked in progress.
 - Nova is a solo Java game project linked to the [nova-game repository](https://github.com/faisalsyero/nova-game).
 - Replace project text, technology tags, role descriptions, and challenge descriptions in `index.html`.
