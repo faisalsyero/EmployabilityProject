@@ -457,16 +457,9 @@ body.dialog-open {
 }
 
 .skill-list li {
-  display: flex;
-  justify-content: space-between;
   border-bottom: 1px solid var(--line);
   padding: 12px 0;
   font-size: 14px;
-}
-
-.skill-list strong {
-  color: var(--blue);
-  font-size: 12px;
 }
 
 .project-evidence {
@@ -541,6 +534,40 @@ body.dialog-open {
   font-size: 13px;
 }
 
+.interests-section {
+  background: var(--paper);
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.interest-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  background: var(--white);
+}
+
+.interest-number {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.interest-card h3 {
+  margin: 14px 0 8px;
+  font-size: 20px;
+}
+
+.interest-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .cv-section {
   background: var(--white);
 }
@@ -583,6 +610,13 @@ body.dialog-open {
 .contact-content > p:not(.eyebrow) {
   margin: 16px 0 24px;
   color: #d0dae6;
+}
+
+.email-link {
+  color: var(--white);
+  font-weight: 750;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  text-underline-offset: 4px;
 }
 
 .social-links {
@@ -720,7 +754,8 @@ body.dialog-open {
 
 @media (max-width: 900px) {
   .hero-grid,
-  .skills-grid {
+  .skills-grid,
+  .interest-grid {
     grid-template-columns: 1fr;
   }
 
